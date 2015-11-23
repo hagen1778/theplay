@@ -1,0 +1,20 @@
+body {
+    margin: 0 100px;
+}
+.card {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    display: inline-block;
+}
+
+.front, .back {
+    border: 2px gray solid;
+    padding: 10px;
+}
+.front {
+    background-color: #ccc;
+}
+.back {
+    background-color: red;
+}
