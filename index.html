@@ -3,7 +3,6 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8" />
-    <!--script src="../jquery-1.10.2.min.js"></script-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
     <link href="src/css/style.css" rel="stylesheet">
     <link href="http://www.jqueryscript.net/demo/Create-A-Flipping-Modal-Window-with-jQuery-CSS3-Adaptive-Modal/adaptive-modal.css" rel="stylesheet">
@@ -18,7 +17,7 @@
 <div id = 'content'></div>
 <div id = 'score'>0</div>
 
-<script>
+<script type="text/javascript">
     Handlebars.registerHelper("debug", function(optionalValue) {
         console.log("Current Context");
         console.log("====================");
@@ -31,126 +30,7 @@
         }
     });
     $('#content').render('template', questions);
-</script>
 
-<!--
-<div id="card-1" class="card">
-    <div class="front">
-        Front
-    </div>
-    <div class="back">
-        Back
-    </div>
-</div>
-
-<div id="card-2" class="card">
-    <div class="front">
-        Front
-    </div>
-    <div class="back">
-        Back
-    </div>
-</div>
-
-<div class="card">
-    <div class="front">
-        Front
-    </div>
-    <div class="back">
-        Back
-    </div>
-</div>
-
-<div class="card">
-    <div class="front">
-        Front
-    </div>
-    <div class="back">
-        Back
-    </div>
-</div>
-
-<div class="card">
-    <div class="front">
-        Front
-    </div>
-    <div class="back">
-        Back
-    </div>
-</div>
-
-<div class="card">
-    <div class="front">
-        Front
-    </div>
-    <div class="back">
-        Back
-    </div>
-</div>
-
-<div class="card">
-    <div class="front">
-        Front
-    </div>
-    <div class="back">
-        Back
-    </div>
-</div>
-
-<div class="card">
-    <div class="front">
-        Front
-    </div>
-    <div class="back">
-        Back
-    </div>
-</div>
-
-<div class="card">
-    <div class="front">
-        Front
-    </div>
-    <div class="back">
-        Back
-    </div>
-</div>
-
-<div class="card">
-    <div class="front">
-        Front
-    </div>
-    <div class="back">
-        Back
-    </div>
-</div>
-
-<div class="card">
-    <div class="front">
-        Front
-    </div>
-    <div class="back">
-        Back
-    </div>
-</div>
-
-<div class="card">
-    <div class="front">
-        Front
-    </div>
-    <div class="back">
-        Back
-    </div>
-</div>
-
-<div class="card">
-    <div class="front">
-        Front
-    </div>
-    <div class="back">
-        Back
-    </div>
-</div>-->
-<script type="text/javascript">
     SCORE_STEP = 15;
     $(document).ready(function(){
         setTimeout(function(){
