@@ -6,12 +6,17 @@
     <!--script src="../jquery-1.10.2.min.js"></script-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
     <link href="src/css/style.css" rel="stylesheet">
+    <link href="http://www.jqueryscript.net/demo/Create-A-Flipping-Modal-Window-with-jQuery-CSS3-Adaptive-Modal/adaptive-modal.css" rel="stylesheet">
     <script src="src/js/flip.js"></script>
     <script src="src/js/questions.js"></script>
     <script src="src/js/jquery-handlebars-1.1.4.min.js"></script>
-    <title>jQuery plugin</title>
+    <script src="http://www.jqueryscript.net/demo/Create-A-Flipping-Modal-Window-with-jQuery-CSS3-Adaptive-Modal/jquery.adaptive-modal.js"></script>
+    <title>The play!</title>
 </head>
-<body><div id = 'content'></div>
+<body>
+<div id = 'content'></div>
+
+
 <script>
     Handlebars.registerHelper("debug", function(optionalValue) {
         console.log("Current Context");
@@ -147,12 +152,23 @@
 <script type="text/javascript">
     $(document).ready(function(){
         setTimeout(function(){
+
             $(".card").flip({
                 trigger: "hover"
             });
+            $("[data-toggle='adaptive-modal']").adaptiveModal();
+
+            $(document.body).on('click', '.check', function() {
+                $(this).parent().find('.answers input').each(function(i, el){
+                    $(el).parent().addClass($(el).data('correct')==true ? 'right' : 'wrong');
+                });
+                $(this).hide();
+            });
+
         }, 100)
 
     });
+
 </script>
 </body>
 </html>

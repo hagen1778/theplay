@@ -19,3 +19,10 @@ body {
 .back {
     background-color: red;
 }
+
+.right{
+    color: green;
+}
+.wrong{
+    color: red;
+}

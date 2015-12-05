@@ -4,7 +4,22 @@
     <div class="front">
     </div>
     <div class="back">
-        {{category}}
+        <a href="#form{{@index}}" style="color: white; font-weight: bold; visibility: visible;" data-toggle="adaptive-modal" class="am-btn">
+            {{category}}
+        </a>
+        <div id="form{{@index}}" style="display: none;">
+                <h1>{{category}}</h1>
+                <h2>{{question}}</h2>
+                <div class = 'answers'>
+                    {{#each answers}}
+                        <div>
+                            <input type="radio" name="answer" data-correct = "{{correct}}" value="{{text}}"> <span for="answer{{@index}}">{{text}}</span><Br>
+                        </div>
+                    {{/each}}
+                </div>
+                <div class = 'explanation'>{{explanation}}</div>
+                <button data-check class = 'check' >Check</button>
+            </div>
     </div>
 </div>
 {{/each}}
