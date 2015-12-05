@@ -162,7 +162,10 @@
                 $(this).parent().find('.answers input').each(function(i, el){
                     $(el).parent().addClass($(el).data('correct')==true ? 'right' : 'wrong');
                 });
+                debugger;
                 $(this).hide();
+                $('#' + $(this).data('parent')).addClass('passed').find('.am-btn').hide();
+//                $(this).parent('.card');
             });
 
         }, 100)

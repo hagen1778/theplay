@@ -26,3 +26,6 @@ body {
 .wrong{
     color: red;
 }
+.passed{
+    opacity: 0.5;
+}
