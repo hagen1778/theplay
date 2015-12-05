@@ -15,23 +15,18 @@
 </head>
 <body>
 <div id = 'content'></div>
+<div id = 'players' class = 'table'></div>
 <div id = 'score'>0</div>
 
 <script type="text/javascript">
-    Handlebars.registerHelper("debug", function(optionalValue) {
-        console.log("Current Context");
-        console.log("====================");
-        console.log(this);
-
-        if (optionalValue) {
-            console.log("Value");
-            console.log("====================");
-            console.log(optionalValue);
-        }
-    });
-    $('#content').render('template', questions);
-
     SCORE_STEP = 15;
+    MAX_PLAYERS = 3;
+
+    initHandlebars();
+    initPlayers();
+
+
+
     $(document).ready(function(){
         setTimeout(function(){
 
@@ -52,13 +47,67 @@
                 $('#' + $(this).data('parent')).addClass('passed').find('.am-btn').hide();
             });
 
+            $('.player .name').dblclick(function(){
+                $(this).prop('contenteditable', true);
+            });
+            $('.player .name').keypress(function(e){
+                if (e.which == 13) {
+                    $(this).prop('contenteditable', false);
+                }
+            });
+            $('.player .name').blur(function(e){
+                $(this).prop('contenteditable', false);
+            });
+//            $('.player').click(function(){debugger
+//                if($(this).data('active') == true)
+//                    return;
+//
+//                $(this).data('active', true);
+////                setCurrentUser($(this).prop('id'));
+//            });
+
+
+
+
+
         }, 100)
 
     });
 
     function incScore(val){
-        var score = $('#score'), number = parseInt(score.text()) + val;
+        var score = $('#' + window.player + ' .score'), number = parseInt(score.text()) + val;
         score.animateNumber({ number: number  }).prop('number', number);
+    }
+
+    function initPlayers(){
+        var container = $('#players');
+        container.empty();
+        for (i = 1; i < MAX_PLAYERS+1; i++) {
+            container.append('<div id = "player' + i + '" class = "player">' +
+                    '<span class = "name">Player ' +  i + '</span>' +
+                    '<span class = "score">0</span>' +
+                '</div>')
+        }
+    }
+    function changePlayer(player){
+        window.player = player;
+    }
+    function initScore(){}
+
+
+    function initHandlebars(){
+        Handlebars.registerHelper("debug", function(optionalValue) {
+            console.log("Current Context");
+            console.log("====================");
+            console.log(this);
+
+            if (optionalValue) {
+                console.log("Value");
+                console.log("====================");
+                console.log(optionalValue);
+            }
+        });
+        $('#content').render('template', questions);
     }
 
 </script>
