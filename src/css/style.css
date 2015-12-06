@@ -11,7 +11,7 @@ body {
     display: inline-block;
     cursor: pointer;
 }
-.table{
+.players_panel{
     position: absolute;
     top: 10px;
     left:0;
@@ -19,9 +19,12 @@ body {
     font-family: cursive;
     z-index: 200;
 }
-.table .player{
+.players_panel .player{
     float: left;
     margin: 0 50px;
+}
+.players_panel .player.active{
+    border:1px solid red;
 }
 
 .front, .back {
@@ -43,4 +46,7 @@ body {
 }
 .passed{
     opacity: 0.5;
+}
+.score{
+    margin-left: 15px;
 }
