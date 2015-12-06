@@ -3,14 +3,14 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script src="src/js/jquery.min.js"></script>
     <link href="src/css/style.css" rel="stylesheet">
-    <link href="http://www.jqueryscript.net/demo/Create-A-Flipping-Modal-Window-with-jQuery-CSS3-Adaptive-Modal/adaptive-modal.css" rel="stylesheet">
+    <link href="src/css/adaptive-modal.css" rel="stylesheet">
     <script src="src/js/flip.js"></script>
     <script src="src/js/questions.js"></script>
     <script src="src/js/jquery-handlebars-1.1.4.min.js"></script>
     <script src="src/js/jquery.animateNumber.min.js"></script>
-    <script src="http://www.jqueryscript.net/demo/Create-A-Flipping-Modal-Window-with-jQuery-CSS3-Adaptive-Modal/jquery.adaptive-modal.js"></script>
+    <script src="src/js/jquery.adaptive-modal.js"></script>
     <title>The play!</title>
 </head>
 <body>
@@ -23,8 +23,6 @@
 
     initHandlebars();
     initPlayers();
-
-
 
     $(document).ready(function(){
         setTimeout(function(){
@@ -55,15 +53,12 @@
                     $(this).prop('contenteditable', false);
                 }
             });
-            playerEl.blur(function(e){
+            playerEl.blur(function(){
                 $(this).prop('contenteditable', false);
             });
             $('.player').click(function(){
                 changePlayer(this)
             });
-
-
-
 
 
         }, 100)
