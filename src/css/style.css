@@ -2,7 +2,9 @@ body {
     margin: 50px 100px;
 }
 #content{
-
+    margin: auto;
+    margin-top: 8%;
+    width: 880px;
 }
 .card {
     width: 100px;
@@ -13,30 +15,41 @@ body {
 }
 .players_panel{
     position: absolute;
-    top: 10px;
-    left:50px;
+    top: 35px;
+    left: 26%;
     font-size: 40px;
     font-family: cursive;
     z-index: 200;
 }
+.players_panel .name{
+    padding: 5px;
+}
 .players_panel .player{
     float: left;
-    margin: 0 50px;
+    margin: 0 70px;
     width: 15%;
 }
 .players_panel .player.active{
-    border:1px solid red;
+    background-color: cyan;
+    color: white;
+}
+.players_panel .score{
+    color: orangered;
 }
 
 .front, .back {
-    border: 2px gray solid;
+    border: 1px gray solid;
     padding: 10px;
 }
 .front {
-    background-color: #ccc;
+    background-color: #F9C56A;
 }
 .back {
     background-color: red;
+    text-align: center;
+}
+.back a{
+    text-decoration: initial;
 }
 
 .right{
@@ -53,4 +66,34 @@ body {
 }
 .hidden{
     display: none;
+}
+.num{
+    font-family: cursive;
+    font-size: 50px;
+}
+
+.am-expanded.am-back {
+    width: 800px;
+    margin-top: 10%;
+    font-size: 29px;
+}
+.am-modal-content h1{
+    color: #ccc;
+}
+.am-modal-content h2{
+    font-size: 36px;
+}
+.am-modal-content  .answers{
+    font-weight: 600;
+    margin-bottom: 30px;
+    font-size: 33px;
+}
+.am-modal-content button{
+    width: 20em;
+    height: 2em;
+    font-size: 17px;
+    margin-top: 15px;
+}
+.am-modal-content  .answers div{
+    margin-bottom: 15px;
 }

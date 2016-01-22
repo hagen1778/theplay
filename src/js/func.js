@@ -23,7 +23,6 @@ function changePlayer(player){
     $(player).addClass('active');
     window.player = $(player).prop('id');
 }
-function initScore(){}
 
 
 function initHandlebars(){
