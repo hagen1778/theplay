@@ -20,7 +20,7 @@
 
 <script type="text/javascript">
     SCORE_STEP = 15;
-    MAX_PLAYERS = 3;
+    MAX_PLAYERS = 4;
 
     initHandlebars();
     initPlayers();
@@ -44,7 +44,7 @@
 
                 $(this).parent().find('.explanation').removeClass('hidden');
 
-                $(this).hide();;
+                $(this).hide();
 
                 $('#' + $(this).data('parent')).addClass('passed').find('.am-btn').hide();
             });

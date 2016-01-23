@@ -16,20 +16,21 @@ body {
 .players_panel{
     position: absolute;
     top: 35px;
-    left: 26%;
+    right: 50px;
     font-size: 40px;
     font-family: cursive;
     z-index: 200;
+    width: 270px;
 }
 .players_panel .name{
     padding: 5px;
 }
 .players_panel .player{
     float: left;
-    margin: 0 70px;
-    width: 15%;
+    margin: 30px 50px;
+    /*width: 15%;*/
 }
-.players_panel .player.active{
+.players_panel .player.active .name{
     background-color: cyan;
     color: white;
 }
@@ -96,4 +97,7 @@ body {
 }
 .am-modal-content  .answers div{
     margin-bottom: 15px;
+}
+.am-modal .card{
+    margin: 50px 10px 10px 10px !important;
 }
