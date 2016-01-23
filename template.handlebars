@@ -2,7 +2,7 @@
 {{#each questions}}
 <div id = "card{{@index}}" class="card" data-toggle="adaptive-modal" href="#form{{@index}}">
     <div class="front">
-        <span class="num">{{@index}}</span>
+        <span class="num">{{math @index "+" 1}}</span>
     </div>
     <div class="back">
         <a href="#form{{@index}}" style="color: white; font-weight: bold; visibility: visible;" data-toggle="adaptive-modal" class="am-btn">

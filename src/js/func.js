@@ -24,6 +24,25 @@ function changePlayer(player){
     window.player = $(player).prop('id');
 }
 
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+}
+
 
 function initHandlebars(){
     Handlebars.registerHelper("debug", function(optionalValue) {
@@ -36,6 +55,22 @@ function initHandlebars(){
             console.log("====================");
             console.log(optionalValue);
         }
+    });
+    Handlebars.registerHelper("math", function(lvalue, operator, rvalue, options) {
+        lvalue = parseFloat(lvalue);
+        rvalue = parseFloat(rvalue);
+
+        return {
+            "+": lvalue + rvalue,
+            "-": lvalue - rvalue,
+            "*": lvalue * rvalue,
+            "/": lvalue / rvalue,
+            "%": lvalue % rvalue
+        }[operator];
+    });
+
+    questions.questions.forEach(function(q){
+        q.answers = shuffle(q.answers);
     });
     $('#content').render('template', questions);
 }
