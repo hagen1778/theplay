@@ -43,6 +43,10 @@ function shuffle(array) {
     return array;
 }
 
+function checkPrev(obj){debugger
+    $(obj).prev().prop("checked", true)
+}
+
 
 function initHandlebars(){
     Handlebars.registerHelper("debug", function(optionalValue) {
@@ -72,5 +76,9 @@ function initHandlebars(){
     questions.questions.forEach(function(q){
         q.answers = shuffle(q.answers);
     });
-    $('#content').render('template', questions);
+    //$('#content').render('template', questions);
+
+    var source = $("#entry-template").html();
+    var template = Handlebars.compile(source);
+    $('#content').html(template(questions))
 }

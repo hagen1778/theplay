@@ -8,19 +8,50 @@
     <link href="src/css/adaptive-modal.css" rel="stylesheet">
     <script src="src/js/flip.js"></script>
     <script src="src/js/questions.js"></script>
-    <script src="src/js/jquery-handlebars-1.1.4.min.js"></script>
+    <script  id="entry-template" type="text/x-handlebars-template" src="template.handlebars">
+        {{debug}}
+        {{#each questions}}
+        <div id = "card{{@index}}" class="card" data-toggle="adaptive-modal" href="#form{{@index}}">
+            <div class="front">
+                <span class="num">{{math @index "+" 1}}</span>
+            </div>
+            <div class="back">
+                <a href="#form{{@index}}" style="color: white; font-weight: bold; visibility: visible;" data-toggle="adaptive-modal" class="am-btn">
+                    {{category}}
+                </a>
+                <div id="form{{@index}}" style="display: none;">
+                    <h1>{{category}}</h1>
+                    <h2>{{question}}</h2>
+                    <div class = 'answers'>
+                        {{#each answers}}
+                        <div>
+                            <input  type="radio" name="answer" data-correct = "{{correct}}" value="{{text}}">
+                            <label onclick="checkPrev(this)">{{text}}</label>
+                            <br />
+                        </div>
+                        {{/each}}
+                    </div>
+                    <div class = 'explanation hidden'>{{explanation}}</div>
+                    <button data-parent = "card{{@index}}" data-check class = 'check' >Check</button>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+
+    </script>
+    <script src="src/js/handlebars.js"></script>
     <script src="src/js/jquery.animateNumber.min.js"></script>
     <script src="src/js/jquery.adaptive-modal.js"></script>
-    <script src="src/js/func.js"></script>
+
     <title>The play!</title>
 </head>
 <body>
 <div id = 'content'></div>
 <div id = 'players' class = 'players_panel'></div>
-
+<script src="src/js/func.js"></script>
 <script type="text/javascript">
     SCORE_STEP = 15;
-    MAX_PLAYERS = 4;
+    MAX_PLAYERS = 3;
 
     initHandlebars();
     initPlayers();
@@ -72,5 +103,6 @@
 
 
 </script>
+
 </body>
 </html>
